@@ -3,13 +3,13 @@
 \*------------------------------------*/
 
 @font-face {
-  font-family: "Inter regular";
+  font-family: "Inter";
   font-weight: 400;
   src: url("../fonts/Inter-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Inter SemiBold";
+  font-family: "Inter";
   font-weight: 500;
   src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
 }
@@ -37,7 +37,8 @@
 html {
   font-size: 14px;
   line-height: 17px;
-  font-family: "Inter Regular", Helvetica, arial, sans-serif;
+  font-family: "Inter", Helvetica, arial, sans-serif;
+  font-weight: 400;
   color: #20223a;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -477,6 +478,42 @@ a:focus {
     ---
     Card with box shadow
 */
+
+.c-card {
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #00000014;
+  box-shadow: 0 2px 4px #00000014;
+}
+
+.c-card__body {
+  padding: 0px 48px 0px 48px;
+}
+
+.c-card__title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  padding: 48px 8px 48px 8px;
+  margin: 0px;
+}
+
+.c-card__footer {
+  text-align: center;
+  padding: 12px;
+  border-top: 1px solid #00000014;
+}
+
+@media (min-width: 378px) {
+  .c-card__footer {
+    padding: 24px;
+  }
+}
+
+.c-card__footer__text {
+  margin-bottom: 0px;
+}
 
 /*
     Component: Forms
