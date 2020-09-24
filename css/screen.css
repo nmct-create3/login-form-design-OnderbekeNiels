@@ -591,6 +591,7 @@ a:focus {
   box-shadow: h-offset v-offset blur spread color;
   box-shadow: 0 0 0 3px var(--global-color-transparent);
 }
+
 /*
     Component: Label
     ---
