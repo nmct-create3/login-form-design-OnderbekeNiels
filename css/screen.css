@@ -19,7 +19,25 @@
 \*------------------------------------*/
 
 :root {
-  --global-text-color: #20223a;
+  /* Main color */
+  --global-color-main-light: #4f95ff;
+  --global-color-main: #3385ff;
+  --global-color-main-dark: #2e77e6;
+  --global-color-transparent: #3385ff4d;
+
+  /* Neutral color */
+  --global-color-neutral-xxxx-light: #ffffff;
+  --global-color-neutral-xxx-light: #000000;
+  --global-color-neutral-xx-light: #000000;
+  --global-color-neutral-x-light: #000000;
+  --global-color-neutral-light: #e2e3e7;
+  --global-color-neutral: #f5f6fa;
+  --global-color-neutral-dark: #b5b6c0;
+  --global-color-neutral-x-dark: #757787;
+  --global-color-neutral-xx-dark: #606274;
+  --global-color-neutral-xxx-dark: #000000;
+  --global-color-neutral-xxxx-dark: Black;
+  --global-color-neutral-xxxx-dark--transparent: #00000014;
 }
 
 /* CSS variables here */
@@ -43,7 +61,7 @@ html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f6fa;
+  background-color: var(--global-color-neutral);
 }
 
 *,
@@ -60,13 +78,13 @@ html {
 */
 
 ::-moz-selection {
-  background: #3385ff;
+  background: var(--global-color-main);
   color: white;
   text-shadow: none;
 }
 
 ::selection {
-  background: #3385ff;
+  background: var(--global-color-main);
   color: white;
   text-shadow: none;
 }
@@ -176,18 +194,18 @@ hr {
 }
 
 a {
-  color: #3385ff;
+  color: var(--global-color-main);
   transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
-  color: purple;
+  color: var(--global-color-main);
 }
 
 a:hover,
 a:focus {
-  color: darkblue;
+  color: var(--global-color-main-light);
 }
 
 /*------------------------------------*\
@@ -205,16 +223,16 @@ a:focus {
   padding: 24px 24px 0;
 }
 
-.o-row--body{
+.o-row--body {
   padding-top: 24px;
   padding-bottom: 24px;
 }
 
 .o-row--login {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* size modifiers */
@@ -488,10 +506,10 @@ a:focus {
 */
 
 .c-card {
-  background-color: #ffffff;
+  background-color: var(--global-color-neutral-xxxx-light);
   border-radius: 3px;
-  border: 1px solid #00000014;
-  box-shadow: 0 2px 4px #00000014;
+  border: 1px solid var(--global-color-neutral-xxxx-dark--transparent);
+  box-shadow: 0 2px 4px var(--global-color-neutral-xxxx-dark--transparent);
 }
 
 .c-card__body {
@@ -510,7 +528,7 @@ a:focus {
 .c-card__footer {
   text-align: center;
   padding: 12px;
-  border-top: 1px solid #00000014;
+  border-top: 1px solid var(--global-color-neutral-xxxx-dark--transparent);
 }
 
 @media (min-width: 378px) {
@@ -544,10 +562,10 @@ a:focus {
   -moz-appearance: none;
   appearance: none;
   width: 100%;
-  border: 1px solid #e2e3e7;
+  border: 1px solid var(--global-color-neutral-light);
   border-radius: 3px;
   font-family: inherit;
-  color: #b5b6c0;
+  color: var(--global-color-neutral-dark);
   font-size: 16px;
   line-height: 24px;
   padding: 11px;
@@ -555,9 +573,9 @@ a:focus {
 }
 
 .c-input:focus {
-  border-color: #4f95ff;
+  border-color: var(--global-color-main-light);
   box-shadow: h-offset v-offset blur spread color;
-  box-shadow: 0 0 0 3px #3385ff4d;
+  box-shadow: 0 0 0 3px var(--global-color-transparent);
 }
 /*
     Component: Label
@@ -569,7 +587,7 @@ a:focus {
   font-size: 14px;
   line-height: 16px;
   padding-bottom: 8px;
-  color: #606274;
+  color: var(--global-color-neutral-xx-dark);
 }
 
 .c-label--option {
@@ -592,9 +610,9 @@ a:focus {
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
-  color: #ffffff;
-  background-color: #3385ff;
-  border: 0 0 0 1px #2e77e6;
+  color: var(--global-color-neutral-xxxx-light);
+  background-color: var(--global-color-main);
+  border: 0 0 0 1px var(--global-color-main-dark);
   border-radius: 3px;
   text-align: center;
   width: 100%;
@@ -602,12 +620,12 @@ a:focus {
 }
 
 .c-button:hover {
-  box-shadow: 0 0 0 3px #3385ff4d;
+  box-shadow: 0 0 0 3px var(--global-color-transparent);
 }
 
 .c-button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px #4f95ff;
+  box-shadow: 0 0 0 3px var(--global-color-main-light);
 }
 
 .c-button:active {
@@ -628,17 +646,16 @@ a:focus {
 */
 
 .u-color-neutral-base {
-  color: Silver;
+  color: var(--global-color-neutralr);
 }
 
 .u-color-neutral-dark {
-  color: Black;
+  color: var(--global-color-neutral-xxxx-dark);
 }
 
-.u-color-lighter-dark{
-  color: #757787
+.u-color-lighter-dark {
+  color: var(--global-color-neutral-x-dark);
 }
-
 
 /*
     Utilities: spacing
