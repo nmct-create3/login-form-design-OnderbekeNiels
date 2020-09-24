@@ -38,6 +38,21 @@
   --global-color-neutral-xxx-dark: #000000;
   --global-color-neutral-xxxx-dark: Black;
   --global-color-neutral-xxxx-dark--transparent: #00000014;
+
+  /* Baseline and whitespacing */
+  --global-baseline: 8px;
+  --global-whitespace: calc(var(--global-baseline)*3); /* = 24px*/
+  --global-whitespace-xs: calc(var(--global-baseline)/2); /* = 4px */
+  --global-whitespace-sm: calc(var(--global-baseline)); /* = 8px */
+  --global-whitespace-md: calc(var(--global-baseline)*2); /* = 16px */
+  --global-whitespace-lg: calc(var(--global-baseline)*4); /* = 32px */   
+  --global-whitespace-xl: calc(var(--global-whitespace-md) * 2); /* = 48px */    
+  --global-whitespace-xxl: calc(var(--global-baseline)*9); /* = 72px */ 
+  --global-whitespace-xxl: calc(var(--global-baseline)*12); /* = 96px */ 
+
+  /* Inputs en button */
+  --global-border-width: 1px;
+
 }
 
 /* CSS variables here */
@@ -123,27 +138,27 @@ h3 {
 
 h1 {
   font-size: 36px;
-  line-height: 48px;
-  margin: 0 0 24px;
+  line-height: calc(var(--global-baseline)*6);
+  margin: 0 0 var(--global-whitespace);
 }
 
 h2 {
   font-size: 32px;
-  line-height: 40px;
-  margin: 0 0 24px;
+  line-height: calc(var(--global-baseline)*5);
+  margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
   font-size: 26px;
-  line-height: 32px;
-  margin: 0 0 24px;
+  line-height: calc(var(--global-baseline)*4);
+  margin: 0 0 var(--global-whitespace);
 }
 
 h4,
 h5,
 h6 {
   font-size: 20px;
-  line-height: 24px;
+  line-height: calc(var(--global-baseline)*3);
   margin: 0 0 24px;
 }
 
@@ -154,12 +169,12 @@ dl,
 table,
 address,
 figure {
-  margin: 0 0 24px;
+  margin: 0 0 var(--global-whitespace);
 }
 
 ul,
 ol {
-  padding-left: 24px;
+  padding-left: var(--global-whitespace);
 }
 
 li ul,
@@ -170,7 +185,7 @@ li ol {
 blockquote {
   font-style: normal;
   font-size: 23px;
-  line-height: 32px;
+  line-height: calc(var(--global-baseline)*4);
   margin: 0 0 24px;
 }
 
@@ -182,7 +197,7 @@ blockquote * {
 figcaption {
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
+  line-height: calc(var(--global-baseline)*2);
   margin-top: 8px;
 }
 
@@ -220,12 +235,12 @@ a:focus {
 
 .o-row {
   position: relative;
-  padding: 24px 24px 0;
+  padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
 .o-row--body {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: var(--global-whitespace-xl);
+  padding-bottom: var(--global-whitespace);
 }
 
 .o-row--login {
@@ -238,26 +253,26 @@ a:focus {
 /* size modifiers */
 
 .o-row--lg {
-  padding-top: 48px;
-  padding-bottom: 24px;
+  padding-top: var(--global-whitespace-xl);
+  padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
-  padding-top: 72px;
-  padding-bottom: 48px;
+  padding-top: var(--global-whitespace-xxl);
+  padding-bottom: var(--global-whitespace-xl);
 }
 
 @media (min-width: 768px) {
   .o-row {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: var(--global-whitespace-xl);
+    padding-right: var(--global-whitespace-xl);
   }
 }
 
 @media (min-width: 992px) {
   .o-row--xl {
-    padding-top: 96px;
-    padding-bottom: 72px;
+    padding-top: var(--global-whitespace-xxxl);
+    padding-bottom: var(--global-whitespace-xxl);
   }
 }
 
@@ -285,19 +300,19 @@ a:focus {
 }
 
 .o-section + .o-section {
-  padding-top: 24px;
+  padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
   .o-section--lg + .o-section--lg,
   .o-section--xl + .o-section--xl {
-    padding-top: 48px;
+    padding-top: var(--global-whitespace-xl)
   }
 }
 
 @media (min-width: 992px) {
   .o-section--xl + .o-section--xl {
-    padding-top: 72px;
+    padding-top: var(--global-whitespace-xxl);
   }
 }
 
@@ -508,12 +523,12 @@ a:focus {
 .c-card {
   background-color: var(--global-color-neutral-xxxx-light);
   border-radius: 3px;
-  border: 1px solid var(--global-color-neutral-xxxx-dark--transparent);
+  border: var(--global-border-width) solid var(--global-color-neutral-xxxx-dark--transparent);
   box-shadow: 0 2px 4px var(--global-color-neutral-xxxx-dark--transparent);
 }
 
 .c-card__body {
-  padding: 0px 48px 0px 48px;
+  padding: 0px var(--global-whitespace-xl) 0px var(--global-whitespace-xl);
 }
 
 .c-card__title {
@@ -521,19 +536,19 @@ a:focus {
   font-size: 18px;
   font-weight: 500;
   line-height: 21px;
-  padding: 48px 8px 48px 8px;
+  padding: var(--global-whitespace-xl) var(--global-whitespace) var(--global-whitespace-xl) var(--global-whitespace);
   margin: 0px;
 }
 
 .c-card__footer {
   text-align: center;
   padding: 12px;
-  border-top: 1px solid var(--global-color-neutral-xxxx-dark--transparent);
+  border-top: var(--global-border-width) solid var(--global-color-neutral-xxxx-dark--transparent);
 }
 
 @media (min-width: 378px) {
   .c-card__footer {
-    padding: 24px;
+    padding: var(--global-whitespace);
   }
 }
 
@@ -562,13 +577,13 @@ a:focus {
   -moz-appearance: none;
   appearance: none;
   width: 100%;
-  border: 1px solid var(--global-color-neutral-light);
+  border: var(--global-border-width) solid var(--global-color-neutral-light);
   border-radius: 3px;
   font-family: inherit;
   color: var(--global-color-neutral-dark);
-  font-size: 16px;
-  line-height: 24px;
-  padding: 11px;
+  font-size: calc(var(--global-baseline)*2);
+  line-height: calc(var(--global-baseline)*3);
+  padding: calc(var(--global-border-width)*11);
   outline: none;
 }
 
@@ -585,14 +600,14 @@ a:focus {
 
 .c-label {
   font-size: 14px;
-  line-height: 16px;
-  padding-bottom: 8px;
+  line-height: calc(var(--global-baseline)*2);
+  padding-bottom: var(--global-whitespace-sm);
   color: var(--global-color-neutral-xx-dark);
 }
 
 .c-label--option {
   padding-bottom: 0px;
-  padding-left: 8px;
+  padding-left: var(--global-whitespace-sm);
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -672,23 +687,23 @@ a:focus {
 }
 
 .u-mb-xs {
-  margin-bottom: 4px !important;
+  margin-bottom: var(--global-whitespace-xs) !important;
 }
 
 .u-mb-sm {
-  margin-bottom: 8px !important;
+  margin-bottom: var(--global-whitespace-sm) !important;
 }
 
 .u-mb-md {
-  margin-bottom: 16px !important;
+  margin-bottom: var(--global-whitespace-md) !important;
 }
 
 .u-mb-lg {
-  margin-bottom: 32px !important;
+  margin-bottom: var(--global-whitespace-lg) !important;
 }
 
 .u-mb-xl {
-  margin-bottom: 48px !important;
+  margin-bottom: var(--global-whitespace-xl) !important;
 }
 
 /*
