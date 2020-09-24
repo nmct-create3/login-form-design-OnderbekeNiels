@@ -205,8 +205,16 @@ a:focus {
   padding: 24px 24px 0;
 }
 
+.o-row--body{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .o-row--login {
-  /* stuff here to align the card */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* size modifiers */
@@ -626,6 +634,11 @@ a:focus {
 .u-color-neutral-dark {
   color: Black;
 }
+
+.u-color-lighter-dark{
+  color: #757787
+}
+
 
 /*
     Utilities: spacing
